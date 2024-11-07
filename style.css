@@ -1,0 +1,47 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding: 0 30px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.stepper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+form {
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input:valid,
+textarea:valid,
+select:valid,
+input:focus:valid,
+textarea:focus:valid,
+select:focus:valid {
+  border-color: green;
+}
+
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  border: 1px solid red;
+}

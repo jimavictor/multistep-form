@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Multi-Step Form</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1 id="formTitle">Job Application Form</h1>
+      <form id="jobApplicationForm">
+        <div class="stepper">
+          <span><span class="currentStep">1</span>/4</span>
+        </div>
+        <!-- Step 1: Personal Information -->
+        <fieldset class="step" id="step-1">
+          <legend id="step1Label">Step 1: Personal Information</legend>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required pattern="[A-Za-z]+" />
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+          <button type="button" class="next" onclick="nextStep()">Next</button>
+        </fieldset>
+
+        <!-- Step 2: Work Experience -->
+        <fieldset class="step" id="step-2" hidden>
+          <legend id="step2Label">Step 2: Work Experience</legend>
+          <label for="company">Most Recent Company</label>
+          <input type="text" id="company" name="company" required />
+          <label for="jobTitle">Job Title</label>
+          <input type="text" id="jobTitle" name="jobTitle" required />
+          <label for="yearsExperience">Years of Experience</label>
+          <input type="number" id="yearsExperience" name="yearsExperience" min="0" required />
+          <button type="button" class="previous" onclick="previousStep()">Previous</button>
+          <button type="button" class="next" onclick="nextStep()">Next</button>
+        </fieldset>
+        
+        <!-- Step 3: Skills & Qualifications -->
+        <fieldset class="step" id="step-3" hidden>
+          <legend id="step3Label">Step 3: Skills & Qualifications</legend>
+          <label for="skills">Skill(s)</label>
+          <textarea id="skills" name="skills" rows="4" required></textarea>
+          <label for="highestDegree">Degree Obtained (Highest)</label>
+          <select id="highestDegree" name="highestDegree" required>
+            <option value="">Select Degree</option>
+            <option value="highschool">High School Diploma</option>
+            <option value="bachelor">Bachelor's Degree</option>
+            <option value="master">Master's Degree</option>
+            <option value="phd">Ph.D.</option>
+          </select>
+          <button type="button" class="previous" onclick="previousStep()">Previous</button>
+          <button type="button" class="next" onclick="nextStep()">Next</button>
+        </fieldset>
+        
+        <!-- Step 4: Review & Submit -->
+        <fieldset class="step" id="step-4" hidden>
+          <legend id="step4Label">Step 4: Review & Submit</legend>
+          <p>Review your information before submitting the application.</p>
+          <button type="button" class="previous" onclick="previousStep()">Previous</button>
+          <button type="submit">Submit Application</button>
+        </fieldset>
+        <div id="errorMessages" style="color: rgb(253, 67, 67)"></div>
+      </form>
+    </main>
+  </body>
+</html>
